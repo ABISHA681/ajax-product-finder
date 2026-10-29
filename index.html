@@ -1,0 +1,85 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Find products using a live REST API">
+  <title>Product Finder | AJAX Project</title>
+  <link rel="stylesheet" href="style.css">
+  <script src="script.js" defer></script>
+</head>
+<body>
+  <header class="site-header">
+    <div class="container header-content">
+      <h1>🛍️ Product Finder</h1>
+      <p>Explore products using a live REST API</p>
+    </div>
+  </header>
+
+  <main class="container">
+    <section class="intro">
+      <h2>Discover Your Next Favorite Product</h2>
+      <p>Search, filter, and explore products from different categories.</p>
+    </section>
+
+    <!-- Controls for searching and filtering -->
+    <section class="controls" aria-label="Product filters">
+      <div class="control-group">
+        <label for="searchInput">Search products</label>
+        <input
+          type="search"
+          id="searchInput"
+          placeholder="Search by product name..."
+        >
+      </div>
+
+      <div class="control-group">
+        <label for="categorySelect">Category</label>
+        <select id="categorySelect">
+          <option value="all">All Categories</option>
+        </select>
+      </div>
+
+      <div class="control-group">
+        <label for="sortSelect">Sort products</label>
+        <select id="sortSelect">
+          <option value="default">Default</option>
+          <option value="low">Price: Low to High</option>
+          <option value="high">Price: High to Low</option>
+          <option value="rating">Highest Rated</option>
+        </select>
+      </div>
+
+      <button id="resetButton" type="button">Reset Filters</button>
+    </section>
+
+    <!-- Live status and product counter -->
+    <div class="results-header">
+      <h2>Available Products</h2>
+      <p id="productCount">Loading products...</p>
+    </div>
+
+    <p id="statusMessage" role="status" aria-live="polite"></p>
+
+    <!-- Product cards are generated dynamically by JavaScript -->
+    <section
+      id="productGrid"
+      class="product-grid"
+      aria-label="Product results"
+    ></section>
+
+    <!-- Details dialog is populated by JavaScript -->
+    <dialog id="productDialog" class="product-dialog">
+      <button id="closeDialog" class="close-button"
+              type="button" aria-label="Close details">×</button>
+      <div id="dialogContent"></div>
+    </dialog>
+  </main>
+
+  <footer>
+    <p>Project 2a | AJAX Application | FakeStore API</p>
+    <p>Built with HTML, CSS and native JavaScript</p>
+  </footer>
+</body>
+</html>
