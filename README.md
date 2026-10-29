@@ -1,2 +1,3 @@
-# ajax-product-finder
-AJAX Product Finder Application using FakeStore REST API
+GitHub: Product Finder GitHub repository
+
+Published website: Product Finder Netlify website
